@@ -3,20 +3,27 @@ import Homepage from "../pages/Homepage";
 import ProductPage from "../pages/ProductPage";
 import Pricingpage from "../pages/Pricingpage";
 import PageNotFound from "../pages/PageNotFound";
+import PageNav from "../components/PageNav";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Homepage />,
+    element: <PageNav />,
     errorElement: <PageNotFound />,
-  },
-  {
-    path: "product",
-    element: <ProductPage />,
-  },
-  {
-    path: "pricing",
-    element: <Pricingpage />,
+    children: [
+      {
+        index: true,
+        element: <Homepage />,
+      },
+      {
+        path: "product",
+        element: <ProductPage />,
+      },
+      {
+        path: "pricing",
+        element: <Pricingpage />,
+      },
+    ],
   },
 ]);
 
