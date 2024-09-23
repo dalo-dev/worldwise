@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router-dom";
-import AppNav from "../components/app-nav/AppNav";
 import AppLayout from "../pages/app-layout/AppLayout";
 import Homepage from "../pages/homepage/Homepage";
 import Login from "../pages/login/Login";
@@ -27,13 +26,7 @@ const router = createBrowserRouter([
   },
   {
     path: "app",
-    element: <AppNav />,
-    children: [
-      {
-        index: true,
-        element: <AppLayout />,
-      },
-    ],
+    element: <AppLayout />,
   },
 ]);
 
